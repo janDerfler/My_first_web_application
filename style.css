@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(0.25turn,rgb(158, 158, 158), rgb(212, 212, 212), pink, rgb(212, 212, 212),rgb(158, 158, 158));
+    font-family: 'Manrope', sans-serif;
+    font-size: x-small;
+    letter-spacing: 0.1em;
+}
+/*Gallery*/
+
+#viewer {
+    width: 460px;
+    margin-top: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 3px 0px grey;
+    background-color: rgb(248, 248, 248);
+}
+
+/*arrows*/
+#rightArrow {
+    transform: rotate(0.5turn);
+}
+
+#image {
+    max-width: 400px;
+    height: 267px;
+    display: inline-block;
+}
+
+button {
+    height: 267px;
+    width: 30px;
+}
+
+button:hover {
+    opacity: 0.5;
+}
+
+/*images*/
+#gallery {
+    position: relative;
+    background-color: sandybrown;
+    padding: 0px;
+    margin: 0px;
+    height: 267px;
+}
+
+/*description*/
+#description {
+    position: absolute;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    bottom: 0px;
+    width: 100%;
+}
+
+h2 {
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+}
+
+p {
+    padding: 5px 10px 5px 10px;
+    margin: 0px;
+}
