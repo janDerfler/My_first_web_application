@@ -24,7 +24,7 @@ body {
     transform: rotate(0.5turn);
 }
 
-#image {
+#photo {
     max-width: 400px;
     height: 267px;
     display: inline-block;
@@ -49,7 +49,7 @@ button:hover {
 }
 
 /*description*/
-#description {
+.gray-container {
     position: absolute;
     color: white;
     background-color: rgba(0, 0, 0, 0.5);
