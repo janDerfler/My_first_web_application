@@ -47,6 +47,5 @@ $('#leftButton').click(() => {
 
 /*Thumbnails*/
 imagesData.forEach((image) => {
-    $('#thumbnails-container').append('<div class="thumbnail"><img></div>');
-    $('.thumbnail img').attr('src', image.photo);
+    $('#thumbnails-container').append('<div class="thumbnail"><img src=' + image.photo + '></div>');
 })
