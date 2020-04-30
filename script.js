@@ -22,11 +22,26 @@ let loadPhoto = (photoNumber) => {
     $('#photo').attr('src', imagesData[photoNumber].photo);
     $('#photo-title').text(imagesData[photoNumber].title);
     $('#photo-description').text(imagesData[photoNumber].description);
+    $('.border-wrap').css({"top": "0px", "box-shadow": "0px 7px 8px -5px rgb(0, 0, 0)"});
     $('.border-wrap[data-index=' + photoNumber + ']').css({"top": "-2px", "box-shadow": "0px 9px 8px -5px rgb(0, 0, 0)"});
   }
 
-loadPhoto(currentPhoto);
+  /*Thumbnails*/
+imagesData.forEach((image, index) => {
+    $('#thumbnails-container').append('<div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div>');
+    $('.border-wrap').click(function() {
+    let indexClicked = $(this).attr('data-index');
+    console.log(indexClicked);
+    // indexClicked is now a string! if you need it as a number you have to change it
+    // because for example "1" + 1 is going to be "11" and not 2
+    let numberIndex = parseInt(indexClicked);
+    // now numberIndex is a number
+    console.log(indexClicked);
+    loadPhoto(numberIndex);
+  });
+})
 
+  /*Buttons*/
 $('#rightButton').click(() => {
     currentPhoto++;
     if (currentPhoto > imagesData.length-1) {
@@ -45,18 +60,4 @@ $('#leftButton').click(() => {
 })
 
 
-/*Thumbnails*/
-imagesData.forEach((image, index) => {
-    $('#thumbnails-container').append('<div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div>');
-    $('.border-wrap').click(function() {
-    let indexClicked = $(this).attr('data-index');
-    console.log(indexClicked);
-    // indexClicked is now a string! if you need it as a number you have to change it
-    // because for example "1" + 1 is going to be "11" and not 2
-    let numberIndex = parseInt(indexClicked);
-    // now numberIndex is a number
-    console.log(indexClicked);
-    loadPhoto(numberIndex);
-  });
-})
-
+loadPhoto(currentPhoto);
