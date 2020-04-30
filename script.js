@@ -18,22 +18,21 @@ let image3 = {
 
 let currentPhoto = 0;
 let imagesData = [image1, image2, image3];
+let loadPhoto = (photoNumber) => {
+    $('#photo').attr('src', imagesData[photoNumber].photo);
+    $('#photo-title').text(imagesData[photoNumber].title);
+    $('#photo-description').text(imagesData[photoNumber].description);
+    // ...
+  }
 
-
-$('#photo').attr('src', imagesData[currentPhoto].photo);    
-$('#photo-title').text(imagesData[currentPhoto].title);
-$('#photo-description').text(imagesData[currentPhoto].description);
-
-
+loadPhoto(currentPhoto);
 
 $('#rightButton').click(() => {
     currentPhoto++;
     if (currentPhoto > imagesData.length-1) {
         currentPhoto = 0
     };
-    $('#photo').attr('src', imagesData[currentPhoto].photo);    
-    $('#photo-title').text(imagesData[currentPhoto].title);
-    $('#photo-description').text(imagesData[currentPhoto].description);
+    loadPhoto(currentPhoto);
 })
 
 
@@ -42,7 +41,12 @@ $('#leftButton').click(() => {
     if (currentPhoto === -1) {
         currentPhoto = imagesData.length-1
     };
-    $('#photo').attr('src', imagesData[currentPhoto].photo);    
-    $('#photo-title').text(imagesData[currentPhoto].title);
-    $('#photo-description').text(imagesData[currentPhoto].description);
+    loadPhoto(currentPhoto);
+})
+
+
+/*Thumbnails*/
+imagesData.forEach((image) => {
+    $('#thumbnails-container').append('<div class="thumbnail"><img></div>');
+    $('.thumbnail img').attr('src', image.photo);
 })
