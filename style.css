@@ -72,6 +72,8 @@ p {
     display: flex;
     justify-content: center;
     width: 460px;
+    height: 50px;
+    margin-top: 10px;;
 }
 
 .thumbnail {
@@ -79,7 +81,8 @@ p {
     width: 40px;
     height: 40px;
     overflow: hidden;
-    margin: 5px 2px 5px 2px;
+
+    background: green;
   }
 
 .thumbnail img {
@@ -92,3 +95,22 @@ p {
         -ms-transform: translate(-50%,-50%);
             transform: translate(-50%,-50%);
   }
+
+.border-wrap {
+    position: relative;
+    background: linear-gradient(to top, rgb(197, 196, 196), rgb(255, 255, 255));
+    padding: 2px;
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    border-radius: 2px;
+    box-shadow: 0px 7px 8px -5px rgb(0, 0, 0);
+}
+
+/*.border-wrap:hover {
+    top: -2px;
+    box-shadow: 0px 9px 8px -5px rgb(0, 0, 0);
+}*/
