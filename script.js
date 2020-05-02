@@ -28,7 +28,7 @@ let loadPhoto = (photoNumber) => {
 
   /*Thumbnails*/
 imagesData.forEach((image, index) => {
-    $('#thumbnails-container').append('<div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div>');
+    $('#thumbnails-container').append('<div class="thumbnail-wrap"><p class="thumbnailTitle">' + image.title + '<div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div></div>');
     $('.border-wrap').click(function() {
     let indexClicked = $(this).attr('data-index');
     console.log(indexClicked);
@@ -40,6 +40,9 @@ imagesData.forEach((image, index) => {
     loadPhoto(numberIndex);
   });
 })
+
+$('.thumbnailTitle').hide()
+$('.thumbnailTitle').hide()
 
   /*Buttons*/
 $('#rightButton').click(() => {

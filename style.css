@@ -68,6 +68,21 @@ p {
 }
 
 /*thumbnails*/
+
+.thumbnail-wrap {
+    background: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.thumbnailTitle {
+    background: linear-gradient(to top, rgb(73, 73, 73), rgb(22, 22, 22));;
+    color: white;
+    border-radius: 3px;
+}
+
 #thumbnails-container {
     display: flex;
     justify-content: center;
