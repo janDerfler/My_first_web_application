@@ -62,7 +62,7 @@ h2 {
     margin: 0px;
 }
 
-p {
+.gray-container p {
     padding: 5px 10px 5px 10px;
     margin: 0px;
 }
@@ -70,17 +70,20 @@ p {
 /*thumbnails*/
 
 .thumbnail-wrap {
-    background: red;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    position: relative;
 }
 
 .thumbnailTitle {
     background: linear-gradient(to top, rgb(73, 73, 73), rgb(22, 22, 22));;
     color: white;
     border-radius: 3px;
+    display: none;
+    position: relative;
+    margin: 0px;
 }
 
 #thumbnails-container {
@@ -89,6 +92,7 @@ p {
     width: 460px;
     height: 50px;
     margin-top: 10px;;
+    background: red;
 }
 
 .thumbnail {
@@ -96,9 +100,11 @@ p {
     width: 40px;
     height: 40px;
     overflow: hidden;
-
-    background: green;
   }
+
+.thumbnail-wrap:hover .thumbnailTitle {
+    display: block;
+}
 
 .thumbnail img {
     position: absolute;

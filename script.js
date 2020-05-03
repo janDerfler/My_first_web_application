@@ -28,21 +28,16 @@ let loadPhoto = (photoNumber) => {
 
   /*Thumbnails*/
 imagesData.forEach((image, index) => {
-    $('#thumbnails-container').append('<div class="thumbnail-wrap"><p class="thumbnailTitle">' + image.title + '<div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div></div>');
+    $('#thumbnails-container').append('<div class="thumbnail-wrap"><p class="thumbnailTitle">' + image.title + '</p><div class="border-wrap" data-index=' + index + '><div class="thumbnail"><img src=' + image.photo + '></div></div></div>');
     $('.border-wrap').click(function() {
     let indexClicked = $(this).attr('data-index');
-    console.log(indexClicked);
     // indexClicked is now a string! if you need it as a number you have to change it
     // because for example "1" + 1 is going to be "11" and not 2
     let numberIndex = parseInt(indexClicked);
     // now numberIndex is a number
-    console.log(indexClicked);
     loadPhoto(numberIndex);
   });
 })
-
-$('.thumbnailTitle').hide()
-$('.thumbnailTitle').hide()
 
   /*Buttons*/
 $('#rightButton').click(() => {
